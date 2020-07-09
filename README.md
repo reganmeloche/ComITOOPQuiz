@@ -1,9 +1,9 @@
 Challenge: 
 - Make the code compile and run properly. Do not change the Program.Main method.
-- Only change the code pf the Vehicle and Bicycle class
+- Only change the code of the Vehicle and Bicycle classes
 
 Description:
-- Vehicle is a base class that specific types of vehicles can derive from, such as Bicycle.
+- Vehicle is a base class. Specific types of vehicles, such as 'Bicycle', can derive from it
 - A bicycle must have the type Road, Mountain, or Hybrid. Otherwise it should throw an exception
 - A Bicycle should have 4 publicly available methods: StartMoving, StopMoving, SpeedUp, SlowDown
 - When the Bicycle starts moving, it should have a speed of 1. When it stops, it should be 0
