@@ -1,0 +1,71 @@
+Please attempt the solution on your own before looking at these hints:
+
+
+
+
+...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+...
+
+
+
+
+
+
+
+
+
+
+...
+
+
+
+
+
+
+
+
+
+
+
+
+...
+
+
+Vehicle fixes:
+- Vehicle needs to be abstract
+- Vehicle._isMoving should be protected
+- Vehicle constructor should not have a type on it
+- CanWeAllFit should take in a STRING array
+- Bonus: CanWeAllFit could be a one-line function
+- virtual func StartMoving needs void type
+- no need for override on virtual StopMoving functions
+- abstract functions must be public
+- SlowDown should not have a body of any sort
+
+Bicycle fixes:
+- Must inherit from Vehicle
+- CurrentSpeed should be a private setter
+- NumberOfBikes must be public and static
+- "Mountain" must be a valid bike type
+- valid bike type needs a NOT (!)
+- invalid bike type should throw exception, not a Console.WriteLine
+- StartMoving and StopMoving also need overrides to set the CurrentSpeed
+- SpeedUp and SlowDown need override keyword
+- SpeedUp should check if _isMoving first
+- Shiftdown should be ShiftDown
+- ShiftDown sign should be > 1, not > 0
