@@ -1,6 +1,5 @@
 Challenge: 
-- Make the code compile and run properly. Do not change the Program.Main method.
-- Only change the code of the Vehicle and Bicycle classes
+- This code has many errors! Make it build and run properly. Do not alter Program.Main method. Only change the code of the Vehicle and Bicycle classes
 
 Description:
 - Vehicle is a base class. Specific types of vehicles, such as 'Bicycle', can derive from it
