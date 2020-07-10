@@ -12,9 +12,9 @@ Description:
 
 Reminder: Do NOT alter the Main method. The challenge is to have the project build and run successfully. The output should be as follows:
 
-Invalid Bike Type: Magical bike
-There are 2 bikes.
-Can we fit? False
-My speed: 0
-Your speed speed: 3
-Success!
+- Invalid Bike Type: Magical bike
+- There are 2 bikes.
+- Can we fit? False
+- My speed: 0
+- Your speed speed: 3
+- Success!
