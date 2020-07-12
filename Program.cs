@@ -63,7 +63,7 @@ namespace oopquiz
             yourBike.SpeedUp();
             yourBike.SpeedUp();
 
-            Console.WriteLine($"Your speed speed: {yourBike.CurrentSpeed}");
+            Console.WriteLine($"Your speed: {yourBike.CurrentSpeed}");
             if (yourBike.CurrentSpeed != 3) {
                 throw new Exception("Incorrect speed on your bike!");
             }
