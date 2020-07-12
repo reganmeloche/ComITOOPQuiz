@@ -16,5 +16,5 @@ Reminder: Do NOT alter the Main method. The challenge is to have the project bui
 - There are 2 bikes.
 - Can we fit? False
 - My speed: 0
-- Your speed speed: 3
+- Your speed: 3
 - Success!
