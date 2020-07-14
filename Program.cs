@@ -81,6 +81,7 @@ namespace oopquiz
     }
 
     class Vehicle {
+        // Some change...
         public int NumWheels { get; }
         public bool IsElectric { get; }
         protected int _maxPassengers;
