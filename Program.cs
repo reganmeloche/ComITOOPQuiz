@@ -80,6 +80,7 @@ namespace oopquiz
         }
     }
 
+
     abstract class Vehicle {
         public int NumWheels { get; }
         public bool IsElectric { get; }
