@@ -17,5 +17,5 @@ Invalid Bike Type: Magical bike
 There are 2 bikes.
 Can we fit? False
 My speed: 0
-Your speed speed: 3
+Your speed: 3
 Success!

@@ -63,7 +63,7 @@ namespace oopquiz
             yourBike.SpeedUp();
             yourBike.SpeedUp();
 
-            Console.WriteLine($"Your speed speed: {yourBike.CurrentSpeed}");
+            Console.WriteLine($"Your speed: {yourBike.CurrentSpeed}");
             if (yourBike.CurrentSpeed != 3) {
                 throw new Exception("Incorrect speed on your bike!");
             }
@@ -80,63 +80,56 @@ namespace oopquiz
         }
     }
 
-    class Vehicle {
+    abstract class Vehicle {
         public int NumWheels { get; }
         public bool IsElectric { get; }
         protected int _maxPassengers;
-        bool _isMoving;
+        protected bool _isMoving;
 
         // Constructor
-        public Vehicle Vehicle(int numWheels, bool isElectric, int maxPassengers) {
+        public Vehicle(int numWheels, bool isElectric, int maxPassengers) {
             NumWheels = numWheels;
             IsElectric = isElectric;
             _maxPassengers = maxPassengers;
         }
 
         // Regular method
-        public bool CanWeAllFit(int[] people) {
-            // Bonus challenge: Make this function into one line
-            if (people.Length <= _maxPassengers) {
-                return true;
-            } else {
-                return false;
-            }
+        public bool CanWeAllFit(string[] people) {
+            return people.Length <= _maxPassengers;
         }
 
         // Virtual defaults
-        public virtual StartMoving() {
+        public virtual void StartMoving() {
             _isMoving = true;
         }
 
-        public virtual override void StopMoving() {
+        public virtual void StopMoving() {
             _isMoving = false;
         }
 
         // Abstract methods
-        abstract void SpeedUp();
-        abstract void SlowDown() {
-            _isMoving--;
-        }
+        public abstract void SpeedUp();
+        public abstract void SlowDown();
     }
 
-    class Bicycle {
+    class Bicycle : Vehicle {
         public int NumSpeeds { get; }
         public string BikeType { get; }
         public int Year { get; }
-        public int CurrentSpeed { get; set; }
+        public int CurrentSpeed { get; private set; }
 
         // Keeps track of the total number of bikes initialized
-        int NumberOfBikes = 0;
+        public static int NumberOfBikes = 0;
 
-        static List<string> _validBikeTypes = new List<string>() { "Road", "Hybrid" };
+        static List<string> _validBikeTypes = new List<string>() { "Road", "Hybrid", "Mountain" };
 
         public Bicycle(
             int numSpeeds, 
             string bikeType, 
             int year
         ) : base(2, false, 1) {
-            if (_validBikeTypes.Contains(bikeType)) {
-                Console.WriteLine("Invalid bike type: {bikeType}");
+            if (!_validBikeTypes.Contains(bikeType)) {
+                throw new Exception($"Invalid bike type: {bikeType}");
             }
             CurrentSpeed = 0;
             _isMoving = false;
@@ -148,15 +141,29 @@ namespace oopquiz
             NumberOfBikes++;
         }
 
-        public void SpeedUp() {
-            if (CurrentSpeed < NumSpeeds) {
+        public override void SpeedUp() {
+            if (_isMoving && CurrentSpeed < NumSpeeds) {
                 CurrentSpeed++;
             }
         }
 
-        public void Slowdown() {
-            if (_isMoving && CurrentSpeed > 0) {
-                _currentSpeed--;
+        public override void SlowDown() {
+            if (_isMoving && CurrentSpeed > 1) {
+                CurrentSpeed--;
+            }
+        }
+
+        public override void StopMoving() {
+            if (_isMoving) {
+                CurrentSpeed = 0;
+                _isMoving = false;
+            }
+        }
+
+        public override void StartMoving() {
+            if (!_isMoving) {
+                CurrentSpeed = 1;
+                _isMoving = true;
             }
         }
     }

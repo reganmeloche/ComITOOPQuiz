@@ -67,5 +67,5 @@ Bicycle fixes:
 - StartMoving and StopMoving also need overrides to set the CurrentSpeed
 - SpeedUp and SlowDown need override keyword
 - SpeedUp should check if _isMoving first
-- Shiftdown should be ShiftDown
-- ShiftDown sign should be > 1, not > 0
+- Slowdown should be SlowDown
+- SlowDown sign should be > 1, not > 0
